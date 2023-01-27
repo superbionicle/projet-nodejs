@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./styles.css" />
+        <title>Bar Ambassadeur Paix-Dieu</title>
+    </head>
+    <body>
+        <div id="panel">
+            <p class="panelInterieur" id="moi"></p>
+            <p class="panelInterieur"><span id="nombre">0</span> en ligne</p>
+            <div class="panelInterieur" id="users">
+                <p>Utilisateurs :</p>
+                <div class="panelInterieur" id="utilisateurs"></div>
+            </div>
+            <ul class="panelInterieur" id="salons">
+                <p>Salons de discussion :</p>
+                <p id="ajoutSalon">
+                    <input
+                        placeholder="Nom salon"
+                        id="nouveauSalon"
+                        autocomplete="off"
+                    />
+                    <button onclick="ajoutSalon()">Ajouter</button>
+                    <button onclick="cancelSalon()">Annuler</button>
+                </p>
+                <button id="boutonSalon" onclick="ajouterSalon()">
+                    + Nouveau salon
+                </button>
+            </ul>
+        </div>
+        <div id="DM">Message privé à <span id="destinataire"></span></div>
+        <div id="cancel" onclick="cancel()">X</div>
+        <ul id="messages"></ul>
+
+        <form id="form" action="">
+            <input placeholder="Pseudo" id="name" autocomplete="off" />
+            <input
+                splaceholder="Message"
+                id="input"
+                autocomplete="off"
+            /><button>Send</button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/javascript.js"></script>
+    </body>
+</html>
